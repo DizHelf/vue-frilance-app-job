@@ -1,15 +1,13 @@
 <template>
   <div>
-
-    
-    <router-view></router-view>
+    ContactDev
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'App',
+  name: 'contact-dev',
   data() {
     return {
       

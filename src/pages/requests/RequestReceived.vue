@@ -1,15 +1,13 @@
 <template>
   <div>
-
-    
-    <router-view></router-view>
+    RequestReceived
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'App',
+  name: 'request-received',
   data() {
     return {
       

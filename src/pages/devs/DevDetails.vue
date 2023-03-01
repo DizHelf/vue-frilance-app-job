@@ -1,15 +1,13 @@
 <template>
   <div>
-
-    
-    <router-view></router-view>
+    DevDetails
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'App',
+  name: 'dev-details',
   data() {
     return {
       

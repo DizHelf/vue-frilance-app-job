@@ -1,15 +1,13 @@
 <template>
   <div>
-
-    
-    <router-view></router-view>
+    NotFaund
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'App',
+  name: 'not-faund',
   data() {
     return {
       

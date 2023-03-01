@@ -1,25 +1,45 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+import { createRouter, createWebHistory } from "vue-router";
+import DevDetails from "@/pages/devs/DevDetails";
+import DevList from "@/pages/devs/DevList";
+import DevRegistration from "@/pages/devs/DevRegistration";
+import ContactDev from "@/pages/requests/ContactDev";
+import RequestReceived from "@/pages/requests/RequestReceived";
+import NotFaund from "@/pages/NotFaund";
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/",
+      redirect: "/devs",
+    },
+    {
+      path: "/devs",
+      component: DevList,
+    },
+    {
+      path: "/devs/:id",
+      component: DevDetails,
+      children: [
+        {
+          path: "contacts",
+          component: ContactDev,
+        },
+      ],
+    },
+    {
+      path: "/register",
+      component: DevRegistration,
+    },
+    {
+      path: "/requests",
+      component: RequestReceived,
+    },
+    {
+      path: "/:notFound(.*)",
+      component: NotFaund,
+    },
+  ],
+});
 
-export default router
+export default router;
